@@ -1,0 +1,27 @@
+Several ways to reading Json body/payload
+
+#1 String contains
+#2 path()
+#3 JysonPath()
+#4 Hamcrest Matchers(method maining)
+#5 JsonResponse JavaDataStruture/Collections
+
+{
+    "id": 103,
+    "name": "Rahwa",
+    "gender": "Male",
+    "phone": 2029096292
+}
+This data structure is Json format, that is in Key and value pairs.
+Json -> Java is Deserialization
+Java -> Json is Serialization
+
+we need Json Parser, Maper Objects (copy Dependencies below to POM.XML)
+-Gson
+-Jackson 1.x
+_Jackson 2.x
+(Map<String, Object> mapOfTheListOneByOne : listOfSpartanNames)
+======================
+libraries used
+Gson- json parser, object mapper
+Deserialisation POJO -> Plain Old Java Object
