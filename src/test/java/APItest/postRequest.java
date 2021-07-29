@@ -75,4 +75,32 @@ and json payload/response should contain:
 
 
     }
+    @Test// in this test I learn serialization and deserialization
+    public void postRequestWithPOJO(){
+        spartan spartan128= new spartan();
+        spartan128.setName("RahwaAbielPOjo");
+        spartan128.setGender("Female");
+        spartan128.setPhone(2029096292);
+
+        Response response = given().accept(ContentType.JSON)
+                .and().contentType(ContentType.JSON)
+                .and().body(spartan128)
+                .when().post("/api/spartans");
+
+        Assert.assertEquals(response.statusCode(),201);
+        Assert.assertEquals(response.contentType(),"application/json");
+
+        response.prettyPrint();
+
+       // ----------------------Get request------------------
+       Response response2= given().accept(ContentType.JSON)
+                .and().pathParam("id",128)
+                .when().get("/api/spartans/{id}");
+       spartan spartant128respons=response2.body().as(spartan.class);
+
+        System.out.println("BurtiMariamBurukFireKersiki"+spartant128respons.toString());
+
+
+
+    }
 }
