@@ -7,10 +7,10 @@
     "default": {},
     "examples": [
         {
-            "id": 1,
-            "name": "Meade",
-            "gender": "Male",
-            "phone": 3584128232
+            "id": 105,
+            "name": "RahwitXibikti",
+            "gender": "Female",
+            "phone": 2029096292
         }
     ],
     "required": [
@@ -27,7 +27,7 @@
             "description": "An explanation about the purpose of this instance.",
             "default": 0,
             "examples": [
-                1
+                105
             ]
         },
         "name": {
@@ -37,7 +37,7 @@
             "description": "An explanation about the purpose of this instance.",
             "default": "",
             "examples": [
-                "Meade"
+                "RahwitXibikti"
             ]
         },
         "gender": {
@@ -47,7 +47,7 @@
             "description": "An explanation about the purpose of this instance.",
             "default": "",
             "examples": [
-                "Male"
+                "Female"
             ]
         },
         "phone": {
@@ -57,7 +57,7 @@
             "description": "An explanation about the purpose of this instance.",
             "default": 0,
             "examples": [
-                3584128232
+                2029096292
             ]
         }
     },
