@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 import java.util.List;
 import java.util.Map;
 
-public class JsonPathChainingAsserting {
+public class JsonPathChainingAssertingMultiMap {
     @BeforeClass
     public void justcollect() {
         RestAssured.baseURI = "http://3.238.143.111:8000";
@@ -56,7 +56,7 @@ and response paylaod should match the the following value
         Assert.assertEquals(id,103);
         Assert.assertEquals(name1,"Rahwa");
         Assert.assertEquals(gender1,"Male");
-        Assert.assertEquals(phone,2029096292l);
+        Assert.assertEquals(phone,2029096292L);
 
     }
     @Test
@@ -66,7 +66,7 @@ and response paylaod should match the the following value
         //Print for checking
         //response.prettyPrint();
         //deserialization- many names, first to the list then create a map structure
-        List<Map<String,Object>> listOfSpartanNames=response.body().as(List.class);
+        List<Map<String,Object>> listOfSpartanNames = response.body().as(List.class);
 
         // now we can print the first punch of Json structure, from the list.
        System.out.println( listOfSpartanNames.get(0));
