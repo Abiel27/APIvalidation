@@ -12,17 +12,35 @@ import test_Utililies.spartanNoAuthtestBaseclass;
 
 import javax.annotation.Resource;
 
-public class PathAndQueryVariablespartans extends spartanNoAuthtestBaseclass{
+public class PathAndQueryVariablespartans extends spartanNoAuthtestBaseclass {
     @Disabled("Spartan test with path variable")
     @Test
-    public void pathVariableTest(){
-       // get("/spartans/120").prettyPeek();
-       Response res1 = given().contentType(ContentType.JSON)
-                .pathParam("id",120)
+    public void pathVariableTest() {
+        // get("/spartans/120").prettyPeek();
+        Response res1 = given().contentType(ContentType.JSON)
+                .pathParam("id", 120)
                 .when().get("/spartans/{id}").prettyPeek();
 
         //Alternative
-        Response res2= given().accept("application/json")
-                .when().get("/spartans/{id}",120).prettyPeek();
+        Response res2 = given().accept("application/json")
+                .when().get("/spartans/{id}", 120).prettyPeek();
+    }
+
+
+    @Disabled("Log to all for request")
+
+    @Test
+    public void requestWithLogToAll() {
+        Response response= given().log().all()
+                .accept("application/json")
+                .pathParam("id",120)
+                .when().get("/spartans/{id}").prettyPeek();
+        //assertion
+
+        assertThat(response.statusCode(),equalTo(200));
+        assertThat(response.contentType(),is("application/json"));
+        //assertThat(response.path("name"),is("RahwitiAbiel"));
+
     }
 }
+
